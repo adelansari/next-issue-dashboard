@@ -1,21 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
+import { Select } from "@radix-ui/themes";
+import { Status } from "@prisma/client";
 
 interface StatusUpdateSelectProps {
   issueId: number;
+  currentStatus: Status;
+  onStatusChange: (newStatus: Status) => void;
 }
 
-const StatusUpdateSelect: React.FC<StatusUpdateSelectProps> = ({ issueId }) => {
-  const [status, setStatus] = useState<string>("");
+const StatusUpdateSelect: React.FC<StatusUpdateSelectProps> = ({
+  issueId,
+  currentStatus,
+  onStatusChange,
+}) => {
+  const [status, setStatus] = useState<Status>(currentStatus);
 
-  const updateIssueStatus = async (newStatus: string) => {
+  useEffect(() => {
+    setStatus(currentStatus);
+  }, [currentStatus]);
+
+  const updateIssueStatus = async (newStatus: Status) => {
     try {
-      await axios.patch(`/api/issues/${issueId}`, { status: newStatus });
+      const response = await axios.patch(`/api/issues/${issueId}`, {
+        status: newStatus,
+      });
       toast.success("Status updated successfully!");
-      setStatus(newStatus); // Update local state
+      onStatusChange(newStatus);
     } catch (error) {
       toast.error("Failed to update status");
     }
@@ -23,14 +37,18 @@ const StatusUpdateSelect: React.FC<StatusUpdateSelectProps> = ({ issueId }) => {
 
   return (
     <div>
-      <select
-        value={status}
-        onChange={(e) => updateIssueStatus(e.target.value)}
-      >
-        <option value="OPEN">Open</option>
-        <option value="IN_PROGRESS">In Progress</option>
-        <option value="CLOSED">Closed</option>
-      </select>
+      <Select.Root onValueChange={updateIssueStatus} value={status}>
+        <Select.Trigger aria-label="Issue status">
+          {/* Display selected status here */}
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            <Select.Item value="OPEN">Open</Select.Item>
+            <Select.Item value="IN_PROGRESS">In Progress</Select.Item>
+            <Select.Item value="CLOSED">Closed</Select.Item>
+          </Select.Group>
+        </Select.Content>
+      </Select.Root>
       <Toaster />
     </div>
   );
