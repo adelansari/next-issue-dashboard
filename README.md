@@ -1,4 +1,32 @@
-# Next Issue Dashboard
+<div align="center">
+<h1 align="center">
+<img src="./public/ReadMeImages/NextIssueLogo.png" width="200" />
+<br>
+</h1>
+<h4>◦ Next Issue Dashboard - Fullstack</h4>
+
+<h5 align="left">Front-End:</h5>
+<p align="center">
+<img src="https://img.shields.io/badge/Next.js-v14.0.1-gray?logo=next.js&logoColor=white&labelColor=000000" alt="Next.js" />
+<img src="https://img.shields.io/badge/React-v18.2.0-gray?logo=react&logoColor=white&labelColor=61DAFB" alt="React" />
+<img src="https://img.shields.io/badge/TypeScript-v5.2.2-gray?logo=TypeScript&logoColor=white&labelColor=blue" alt="TypeScript" />
+<img src="https://img.shields.io/badge/TailwindCSS-v3.3.5-gray?logo=tailwind-css&logoColor=white&labelColor=38B2AC" alt="TailwindCSS" />
+<img src="https://img.shields.io/badge/React%20Query-v4.35.3-gray?logo=react-query&logoColor=white&labelColor=FF4154" alt="React Query" />
+<img src="https://img.shields.io/badge/React%20Hook%20Form-v7.46.1-gray?logo=reacthookform&logoColor=white&labelColor=EC5990" alt="React Hook Form" />
+<img src="https://img.shields.io/badge/axios-v1.5.0-gray?logo=axios&logoColor=white&labelColor=671DDF" alt="Axios" />
+<img src="https://img.shields.io/badge/Recharts-v2.8.0-gray?logo=recharts&logoColor=white&labelColor=FAA74B" alt="Recharts" />
+</p>
+
+<h5 align="left">Back-End and Other Tools:</h5>
+<p align="center">
+<img src="https://img.shields.io/badge/Next.js-v14.0.1-gray?logo=next.js&logoColor=white&labelColor=000000" alt="Next.js" />
+<img src="https://img.shields.io/badge/Prisma-v5.3.1-gray?logo=prisma&logoColor=white&labelColor=2D3748" alt="Prisma" />
+<img src="https://img.shields.io/badge/Next%20Auth-v4.24.5-gray?logo=nextauth.js&logoColor=white&labelColor=3B82F6" alt="Next Auth" />
+<img src="https://img.shields.io/badge/Sentry-v7.81.1-gray?logo=sentry&logoColor=white&labelColor=362D59" alt="Sentry" />
+</p>
+</div>
+
+---
 
 ## Introduction
 
